@@ -1,19 +1,6 @@
-* {
-  margin: 0;
-}
-
 html,
 body {
-  height: 100%;
-}
-
-html {
-  background-color: gainsboro;
-}
-
-body {
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
