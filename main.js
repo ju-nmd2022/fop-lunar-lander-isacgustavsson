@@ -75,7 +75,7 @@ class Racetrack {
     this.straightRoad = loadImage("images/straightRoad.png");
     this.curvedRoad = loadImage("images/curvedRoad.png");
     this.curvedRoad2 = loadImage("images/curvedRoad2.png");
-    this.finish = loadImage("images/finish.png");
+    this.finish = loadImage("/images/finish.png");
 
     this.pos = createVector(0, 0);
     this.vel = createVector(0, 0);
