@@ -32,12 +32,39 @@ class Player {
     push();
     noStroke();
     fill("black");
-    rect(-35, -43, 22, 12, 2);
-    rect(-35, 21, 22, 12, 2);
-    rect(10, -43, 22, 12, 2);
-    rect(10, 21, 22, 12, 2);
+    rect(-35, -42, 22, 12, 2);
+    rect(-35, 20, 22, 12, 2);
+    rect(10, -42, 22, 12, 2);
+    rect(10, 20, 22, 12, 2);
 
-    rect(-5, -20, 20, 30, 4);
+    // Stripes //
+
+    rect(-this.s - 15, -19, this.s * 3, 10, 0);
+    rect(-this.s - 15, 0, this.s * 3, 10, 0);
+
+    // back window //
+    push();
+    fill(0, 220);
+    rect(-24, -24, 20, 40, 3);
+
+    // front window //
+
+    rect(10, -24, 10, 40, 4);
+
+    // side windows //
+
+    rect(-4, -26, 14, 4, 2);
+    rect(-4, 13, 14, 4, 2);
+    pop();
+
+    // headlights //
+    push();
+    noStroke();
+    fill("red");
+    rect(-45, -1, 2, 13, 3);
+    rect(-45, -20, 2, 13, 3);
+    pop();
+
     pop();
     pop();
   }

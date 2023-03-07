@@ -3,8 +3,8 @@ let player;
 let force;
 let img;
 
-let startScreen = true;
-let gameScreen = false;
+let startScreen = false;
+let gameScreen = true;
 let gameOverScreen = false;
 
 function setup() {
@@ -30,9 +30,9 @@ function screenChanger() {
     background("black");
   }
 
-  if (gameScreen === true) {
-    setInterval(stressor, 60000);
-  }
+  // if (gameScreen === true) {
+  //   setInterval(stressor, 60000);
+  // }
 }
 
 function stressor() {
