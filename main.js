@@ -56,6 +56,26 @@ function stressor() {
 
 function keySpawner() {
   keys.push(new Key(-30, -150));
+  keys.push(new Key(-30, -1400));
+  keys.push(new Key(-300, -2100));
+  keys.push(new Key(-1500, -2100));
+  keys.push(new Key(-2200, -2100));
+  keys.push(new Key(-2400, -1500));
+  keys.push(new Key(-2750, -1500));
+  keys.push(new Key(-2750, -2400));
+  keys.push(new Key(-2800, -2900));
+  keys.push(new Key(-3200, -2900));
+  keys.push(new Key(-3500, -2700));
+  keys.push(new Key(-3130, -2200));
+  keys.push(new Key(-3450, -1750));
+  keys.push(new Key(-3550, -1440));
+  keys.push(new Key(-3400, -1100));
+  keys.push(new Key(-3550, -600));
+  keys.push(new Key(-3150, 0));
+  keys.push(new Key(-2900, -250));
+  keys.push(new Key(-2400, -150));
+  keys.push(new Key(-1600, -150));
+  keys.push(new Key(-1580, +400));
 }
 
 function draw() {
@@ -77,7 +97,7 @@ function draw() {
       keys[i].animate();
 
       if (player.hits(keys[i])) {
-        console.log("ay");
+        keys.splice(i, 1);
       }
     }
   }

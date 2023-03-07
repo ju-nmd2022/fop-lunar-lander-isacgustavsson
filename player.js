@@ -24,7 +24,7 @@ class Player {
 
   animate() {
     push();
-    translate(this.pos.x + width / 2, this.pos.y + height / 2);
+    translate(this.pos.x + width / 2 - 26, this.pos.y + height / 2);
     rotate(this.dir);
     noStroke();
     fill("royalblue");
@@ -81,7 +81,7 @@ class Player {
   hits(keys) {
     this.d = dist(this.pos.x, this.pos.y, keys.pos.x, keys.pos.y);
 
-    if (this.d < this.s - keys.s + 20) {
+    if (this.d < this.s - keys.s + 80) {
       return this.d;
     }
   }
