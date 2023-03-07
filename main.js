@@ -25,6 +25,18 @@ function screenChanger() {
     startScreen = false;
     gameScreen = true;
   }
+
+  if (gameOverScreen === true) {
+    background("black");
+  }
+
+  if (gameScreen === true) {
+    setInterval(stressor, 60000);
+  }
+}
+
+function stressor() {
+  gameOverScreen = true;
 }
 
 function draw() {
