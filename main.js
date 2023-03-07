@@ -4,11 +4,12 @@ let force;
 let img;
 let song;
 let keys = [];
+let keyChain = 0;
 
 let d;
 
-let startScreen = false;
-let gameScreen = true;
+let startScreen = true;
+let gameScreen = false;
 let gameOverScreen = false;
 
 function preload() {
@@ -98,7 +99,13 @@ function draw() {
 
       if (player.hits(keys[i])) {
         keys.splice(i, 1);
+        keyChain += 1;
+        console.log(keyChain);
       }
     }
+  }
+
+  if (keyChain == 21) {
+    alert("you win");
   }
 }
