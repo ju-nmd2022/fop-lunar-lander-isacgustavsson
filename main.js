@@ -5,6 +5,8 @@ let img;
 let song;
 let keys = [];
 let keyChain = 0;
+let stressor = 5;
+let monoton;
 
 let d;
 
@@ -14,6 +16,8 @@ let gameOverScreen = false;
 
 function preload() {
   song = loadSound("sounds/LowRider.mp3");
+
+  monoton = loadFont("fonts/Monoton-Regular.ttf");
 }
 
 function setup() {
@@ -42,17 +46,50 @@ function screenChanger() {
     //song.play();
   }
 
+  if (gameScreen === true) {
+    if (frameCount % 350 === 0 && stressor > 0) {
+      stressor--;
+    }
+
+    if (stressor === 0) {
+      gameScreen = false;
+      gameOverScreen = true;
+    }
+  }
+
   if (gameOverScreen === true) {
     background("black");
+
+    push();
+    fill("red");
+    textFont(monoton);
+    stroke("red");
+    strokeWeight(1.5);
+    textSize(110);
+    text("GAME OVER", width / 2 - 390, height / 2 - 185);
+    pop();
+
+    fill("red");
+    textFont(monoton);
+    stroke("red");
+    strokeWeight(0.5);
+    textSize(42);
+    text("You ran out of time", width / 2 - 250, height / 2 - 85);
+
+    textSize(42);
+    textFont(monoton);
+    text("Play Again?", width / 2 - 150, height / 2 + 100);
+    text("Press Enter to restart", width / 2 - 280, height / 2 + 200);
   }
 
-  if (gameScreen === true) {
-    setInterval(stressor, 60000);
+  if (gameOverScreen === true) {
+    if (keyCode === 13) {
+      gameOverScreen = false;
+      startScreen = false;
+      location.reload();
+      gameScreen = true;
+    }
   }
-}
-
-function stressor() {
-  gameOverScreen = true;
 }
 
 function keySpawner() {
@@ -82,7 +119,6 @@ function keySpawner() {
 function draw() {
   clear();
   background("black");
-  screenChanger();
 
   if (gameScreen === true) {
     racetrack.animate();
@@ -108,4 +144,6 @@ function draw() {
   if (keyChain == 21) {
     alert("you win");
   }
+
+  screenChanger();
 }
