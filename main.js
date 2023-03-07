@@ -2,10 +2,15 @@ let racetrack;
 let player;
 let force;
 let img;
+let song;
 
-let startScreen = false;
-let gameScreen = true;
+let startScreen = true;
+let gameScreen = false;
 let gameOverScreen = false;
+
+function preload() {
+  song = loadSound("sounds/LowRider.mp3");
+}
 
 function setup() {
   createCanvas(800, 600);
@@ -24,15 +29,16 @@ function screenChanger() {
   if (keyCode === 13) {
     startScreen = false;
     gameScreen = true;
+    song.play();
   }
 
   if (gameOverScreen === true) {
     background("black");
   }
 
-  // if (gameScreen === true) {
-  //   setInterval(stressor, 60000);
-  // }
+  if (gameScreen === true) {
+    setInterval(stressor, 60000);
+  }
 }
 
 function stressor() {
