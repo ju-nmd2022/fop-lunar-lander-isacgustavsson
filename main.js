@@ -13,6 +13,7 @@ let d;
 let startScreen = true;
 let gameScreen = false;
 let gameOverScreen = false;
+let winScreen = false;
 
 function preload() {
   song = loadSound("sounds/LowRider.mp3");
@@ -38,12 +39,12 @@ function setup() {
 function screenChanger() {
   if (startScreen === true) {
     image(img, 0, 0);
-  }
 
-  if (keyCode === 13) {
-    startScreen = false;
-    gameScreen = true;
-    //song.play();
+    if (keyCode === 13) {
+      startScreen = false;
+      gameScreen = true;
+      //song.play();
+    }
   }
 
   if (gameScreen === true) {
@@ -80,14 +81,54 @@ function screenChanger() {
     textFont(monoton);
     text("Play Again?", width / 2 - 150, height / 2 + 100);
     text("Press Enter to restart", width / 2 - 280, height / 2 + 200);
-  }
 
-  if (gameOverScreen === true) {
     if (keyCode === 13) {
       gameOverScreen = false;
-      startScreen = false;
-      location.reload();
       gameScreen = true;
+      window.location.reload();
+    }
+  }
+
+  if (keyChain == 21) {
+    winScreen = true;
+  }
+
+  if (winScreen === true) {
+    gameScreen = false;
+    background("black");
+    push();
+    fill("red");
+    textFont(monoton);
+    stroke("red");
+    strokeWeight(1.5);
+    textSize(120);
+    text("YO U    W I N  !", width / 2 - 375, height / 2 + -100);
+    pop();
+
+    push();
+    fill("red");
+    textFont(monoton);
+    stroke("red");
+    strokeWeight(1);
+    textSize(62);
+    text("Play Again?", width / 2 - 230, height / 2 + 50);
+    pop();
+
+    push();
+    fill("red");
+    textFont(monoton);
+    stroke("red");
+    strokeWeight(0.4);
+    textSize(42);
+    text("Press enter to restart", width / 2 - 300, height / 2 + 200);
+    pop();
+  }
+
+  if (winScreen === true) {
+    if (keyCode === 13) {
+      winScreen = false;
+      gameScreen = true;
+      location.reload();
     }
   }
 }
@@ -139,10 +180,6 @@ function draw() {
         console.log(keyChain);
       }
     }
-  }
-
-  if (keyChain == 21) {
-    alert("you win");
   }
 
   screenChanger();
