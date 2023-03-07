@@ -3,9 +3,12 @@ let player;
 let force;
 let img;
 let song;
+let keys = [];
 
-let startScreen = true;
-let gameScreen = false;
+let d;
+
+let startScreen = false;
+let gameScreen = true;
 let gameOverScreen = false;
 
 function preload() {
@@ -19,6 +22,12 @@ function setup() {
 
   racetrack = new Racetrack();
   player = new Player();
+
+  for (let i = 0; i < 0; i++) {
+    keys[i] = new Key();
+  }
+
+  keySpawner();
 }
 
 function screenChanger() {
@@ -29,7 +38,7 @@ function screenChanger() {
   if (keyCode === 13) {
     startScreen = false;
     gameScreen = true;
-    song.play();
+    //song.play();
   }
 
   if (gameOverScreen === true) {
@@ -45,9 +54,14 @@ function stressor() {
   gameOverScreen = true;
 }
 
+function keySpawner() {
+  keys.push(new Key(-30, -150));
+}
+
 function draw() {
   clear();
   background("black");
+  screenChanger();
 
   if (gameScreen === true) {
     racetrack.animate();
@@ -58,7 +72,13 @@ function draw() {
     player.update();
     player.move();
     player.boost();
-  }
 
-  screenChanger();
+    for (let i = 0; i < keys.length; i++) {
+      keys[i].animate();
+
+      if (player.hits(keys[i])) {
+        console.log("ay");
+      }
+    }
+  }
 }

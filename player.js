@@ -1,10 +1,11 @@
 class Player {
-  constructor() {
-    this.pos = createVector(width / 2, height / 2);
+  constructor(x, y) {
+    this.pos = createVector(x, y);
     this.vel = createVector(0, 0);
     this.dir = PI + PI / 2;
     this.s = 30;
     this.force = force;
+    this.d = d;
   }
 
   update() {
@@ -23,7 +24,7 @@ class Player {
 
   animate() {
     push();
-    translate(this.pos.x, this.pos.y);
+    translate(this.pos.x + width / 2, this.pos.y + height / 2);
     rotate(this.dir);
     noStroke();
     fill("royalblue");
@@ -74,6 +75,14 @@ class Player {
       this.dir -= 0.1;
     } else if (keyIsDown(68)) {
       this.dir += 0.1;
+    }
+  }
+
+  hits(keys) {
+    this.d = dist(this.pos.x, this.pos.y, keys.pos.x, keys.pos.y);
+
+    if (this.d < this.s - keys.s + 20) {
+      return this.d;
     }
   }
 }

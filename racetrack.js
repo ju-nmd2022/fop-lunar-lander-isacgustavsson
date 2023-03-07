@@ -30,7 +30,7 @@ class Racetrack {
     translate(this.pos.x, this.pos.y);
 
     push();
-    image(this.start, 171, -0, 400, 200);
+    image(this.start, 171, 0, 400, 200);
     rotate(1.57);
     image(this.straightRoad, 200, -570, 400, 400);
     image(this.straightRoad, -399, -570, 400, 400);
