@@ -7,6 +7,7 @@ let keys = [];
 let keyChain = 0;
 let stressor = 5;
 let monoton;
+let nebula;
 
 let d;
 
@@ -25,6 +26,7 @@ function setup() {
   createCanvas(800, 600);
 
   img = loadImage("images/60parsecs.png");
+  nebula = loadImage("images/nebula.png");
 
   racetrack = new Racetrack();
   player = new Player();
@@ -164,6 +166,7 @@ function draw() {
   background("black");
 
   if (gameScreen === true) {
+    background(nebula);
     racetrack.animate();
     racetrack.update();
     racetrack.boost();
