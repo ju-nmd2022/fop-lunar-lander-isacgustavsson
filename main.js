@@ -43,12 +43,12 @@ function screenChanger() {
     if (keyCode === 13) {
       startScreen = false;
       gameScreen = true;
-      //song.play();
+      song.loop();
     }
   }
 
   if (gameScreen === true) {
-    if (frameCount % 350 === 0 && stressor > 0) {
+    if (frameCount % 600 === 0 && stressor > 0) {
       stressor--;
     }
 
@@ -85,6 +85,7 @@ function screenChanger() {
     if (keyCode === 13) {
       gameOverScreen = false;
       gameScreen = true;
+      song.loop();
       window.location.reload();
     }
   }
@@ -129,6 +130,7 @@ function screenChanger() {
       winScreen = false;
       gameScreen = true;
       location.reload();
+      song.loop();
     }
   }
 }
