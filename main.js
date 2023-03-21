@@ -26,6 +26,14 @@ adding a function that adds force to the velocity from the direction that the pl
 is heading from. This line is -->  this.force = p5.Vector.fromAngle(this.dir); <----
 and is used in player.boost()
 
+    | Dan Shiffman's "TheCodingTrain" Asteroids with P5JS |
+
+  ----->  https://www.youtube.com/watch?v=hacZU523FyM <-----
+
+  | Section of video regarding Velocity and acceleration |
+
+  -----> https://www.youtube.com/watch?v=hacZU523FyM <-----
+
 ===================================================================================*/
 
 let racetrack;
