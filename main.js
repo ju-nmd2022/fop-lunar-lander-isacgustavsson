@@ -8,7 +8,6 @@ let keyChain = 0;
 let stressor = 5;
 let monoton;
 let nebula;
-
 let d;
 
 let startScreen = true;
