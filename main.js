@@ -16,15 +16,12 @@ let gameScreen = false;
 let gameOverScreen = false;
 let winScreen = false;
 
-function preload() {
-  song = loadSound("sounds/LowRider.mp3");
-
-  monoton = loadFont("fonts/Monoton-Regular.ttf");
-}
 
 function setup() {
   createCanvas(800, 600);
 
+  song = loadSound("sounds/LowRider.mp3");
+  monoton = loadFont("fonts/Monoton-Regular.ttf");
   img = loadImage("images/60parsecs.png");
   nebula = loadImage("images/nebula.png");
 
