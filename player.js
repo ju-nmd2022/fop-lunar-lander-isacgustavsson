@@ -1,3 +1,20 @@
+/* =========================================================================
+
+In this file i have created a class that i have used to create the player (car)
+
+Here you can find the relevant functions relating to the velocity, force and translation
+that were implemented from TheCodingTrain. 
+
+TLDR; 
+
+This.pos
+This.vel
+
+update()
+boost()
+
+===========================================================================*/
+
 class Player {
   constructor(x, y) {
     this.pos = createVector(x, y);

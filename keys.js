@@ -1,3 +1,10 @@
+/* ========================================================
+
+In this file i have the key class that i used to 
+create an array of key obejcts  that i used in the game.
+
+==========================================================*/
+
 class Key {
   constructor(x, y) {
     this.pos = createVector(x, y);

@@ -1,3 +1,16 @@
+/* =====================================================
+
+In this file i have created a class that i used in
+order to create the racetrack that i used for the game.
+
+In here you can find a few lines of the code that have been implemented from TheCodingTrain.
+
+An interesting point to make is that i have used the lines of code here a little bit differently.
+Here i made the racetrack objects have their own reference points that move in relation to the player.
+So when the players position is incrementing. The racetracks position decrements. 
+
+======================================================*/
+
 class Racetrack {
   constructor() {
     this.start = loadImage("images/start.png");

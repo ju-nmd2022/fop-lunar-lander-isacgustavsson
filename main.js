@@ -1,3 +1,33 @@
+/* ==================================================================================
+
+            :::::::::::::::::::::::::: READ ME ::::::::::::::::::::::::::
+
+This is the main javascript file where i store the setup and the draw functions. 
+
+This is also where i have stored most of the variables that are used in the game aswell as 
+
+a few additional functions such as the screen changer and the keySpawner. 
+
+           :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+I was inspired to make this game by watching Dan Shiffmans videos on his youtube channel 
+TheCodingTrain, where he remade the classic Asteroids game using the P5JS library. 
+I have implemented some of the more mathematically challenging code that he used in the videos, 
+but most of the code in the game is my own that i figured out with a bit of trial and error. 
+The code that i did implement is more specifically the CreateVector Syntax that (in this context)
+are used in order to create x and y positions and reference points that i could use to translate the
+interaction between the player and the enviroment. 
+
+I also used the same syntax in the function that adds velocity in player.update() 
+
+
+I also implemented a line of code in order to create directional acceleration by 
+adding a function that adds force to the velocity from the direction that the player
+is heading from. This line is -->  this.force = p5.Vector.fromAngle(this.dir); <----
+and is used in player.boost()
+
+===================================================================================*/
+
 let racetrack;
 let player;
 let force;
@@ -15,7 +45,6 @@ let gameScreen = false;
 let gameOverScreen = false;
 let winScreen = false;
 
-
 function setup() {
   createCanvas(800, 600);
 
@@ -26,10 +55,6 @@ function setup() {
 
   racetrack = new Racetrack();
   player = new Player();
-
-  for (let i = 0; i < 0; i++) {
-    keys[i] = new Key();
-  }
 
   keySpawner();
 }
